@@ -73,7 +73,7 @@ spec:
             allowPrivilegeEscalation: true
             # runAsNonRoot: true
             runAsUser: 1
-            privileged: false
+            privileged: true
             capabilities:
               # drop:
                 # - all
