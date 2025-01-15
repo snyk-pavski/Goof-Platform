@@ -1,0 +1,13 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.1
+languageSettings:
+  python:
+    - severityThreshold: invalid-severity
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  SNYK-JS-UNSETVALUE-2400660:
+    - webpack@4.46.0 > * > unset-value@1.0.0:
+        reason: Module not included in built image or used at runtime
+        expires: 2023-04-20T20:43:37.856Z
+        created: 2023-03-21T20:43:37.860Z
+patch: {}
