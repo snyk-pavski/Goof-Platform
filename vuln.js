@@ -17,12 +17,12 @@ app.get('/api/network-status', (req, res) => {
 
     // Constructing the command string by concatenating user input
     // THIS IS THE VULNERABLE PART
-    const command = `ping -c 3 ${host}`; // On Linux/macOS. For Windows, it might be 'ping -n 3 ${host}'
+    const command = 'ping'; 
 
     console.log(`Executing command: ${command}`);
 
     // Executing the command
-    exec(command, (error, stdout, stderr) => {
+    execFile(command, ['-c', '3', host], (error, stdout, stderr) => {
         if (error) {
             console.error(`Execution error: ${error.message}`);
             // It's generally not a good idea to send raw error messages to the client
