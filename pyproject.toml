@@ -1,0 +1,73 @@
+[tool.poetry]
+name = "testing"
+version = "0.1.0"
+description = ""
+authors = ["Pawel"]
+packages = [{ include = "testing", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+babel = "2.16.0"
+pydantic = "^2.8.2"
+langfuse = "^3.6.2"
+gridlock = "2.0.0"
+
+[tool.poetry.group.local-packages.dependencies]
+libdto = { path = "../libs/libdto", develop = false }
+libllm = { path = "../libs/libllm", develop = false }
+context-logging = { path = "../libs/context_logging", develop = false }
+lambda-execution = { path = "../libs/lambda_execution", develop = false }
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.13.0"
+ruff = "^0.13.2"
+pandas = "^2.2.3"
+wandb = "^0.19.11"
+fastapi = "^0.115.12"
+uvicorn = "^0.34.0"
+PySide6 = "6.6.2"
+gtimelog2tick = "0.2.2"
+celldiff = "0.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+exclude = [
+    "**/.venv",
+    "**/.git",
+    "**/.idea",
+    "**/node_modules",
+    "**/cdk.out",
+    "**/cookiecutters",
+]
+
+line-length = 120
+indent-width = 4
+
+target-version = "py311"
+
+[tool.ruff.format]
+indent-style = "space"
+quote-style = "double"
+docstring-code-format = true
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # isort
+    "I",
+]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+force-wrap-aliases = true
+combine-as-imports = true
+known-third-party = ["test"]
