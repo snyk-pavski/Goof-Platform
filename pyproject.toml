@@ -10,6 +10,7 @@ python = ">=3.11,<3.12"
 babel = "2.16.0"
 pydantic = "^2.8.2"
 langfuse = "^3.6.2"
+gridlock = "2.0.0"
 
 [tool.poetry.group.local-packages.dependencies]
 libdto = { path = "../libs/libdto", develop = false }
