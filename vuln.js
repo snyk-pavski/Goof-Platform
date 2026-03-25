@@ -1,9 +1,11 @@
 const express = require('express');
+const helmet = require('helmet');
 const { exec } = require('child_process'); // Module to execute shell commands
 
 const app = express();
 const port = 3000;
 
+app.use(helmet());
 app.use(express.urlencoded({ extended: true })); // To parse URL-encoded data
 
 // Endpoint that is vulnerable to command injection
