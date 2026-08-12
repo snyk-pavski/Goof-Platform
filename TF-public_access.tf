@@ -90,4 +90,5 @@ resource "aws_redshift_cluster" "redshift" {
   node_type          = "dc1.large"
   cluster_type       = "single-node"
   publicly_accessible = true
+Edit
 }
