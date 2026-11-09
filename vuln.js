@@ -47,3 +47,4 @@
 //     console.log('Try accessing: http://localhost:3000/api/network-status?host=example.com');
 //     console.log('Or try to inject a command: http://localhost:3000/api/network-status?host=example.com;ls');
 // });
+// test
